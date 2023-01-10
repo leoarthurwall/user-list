@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import { useEffect, useState } from "react";
 
 const Users = () => {
-  return (
-    <div>Users</div>
-  )
-}
+  const [userData, setUserData] = useState([]);
+  const API = "https://randomuser.me/api/?results=20";
+  const fetchUserData = () => {
+    fetch(API)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        setUserData(res);
+      });
+  };
+  useEffect(() => {
+    fetchUserData();
+  }, []);
 
-export default Users
+  console.log({ userData });
+  return <div>Users</div>;
+};
+
+export default Users;
