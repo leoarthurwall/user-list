@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const Container = styled.section`
 display: flex;
-justify-content: center;
+width: 90%;
+justify-content: space-evenly;
 align-items: center;
 flex-direction: row;
 `;
@@ -40,23 +41,23 @@ const Users = () => {
   console.log({ userData });
   return <Container>
    <Name>
-    <Heading></Heading>
+    <Heading>Name</Heading>
     <NameData></NameData>
    </Name>
    <Email>
-    <Heading></Heading>
+    <Heading>Email</Heading>
     <EmailData></EmailData>
    </Email>
    <Phone>
-    <Heading></Heading>
+    <Heading>Phone</Heading>
     <PhoneData></PhoneData>
    </Phone>
    <Photo>
-    <Heading></Heading>
+    <Heading>Photo</Heading>
     <PhotoData></PhotoData>
    </Photo>
    <Show>
-    <Heading></Heading>
+    <Heading>Show</Heading>
     <ShowData></ShowData>
    </Show>
   </Container>;
