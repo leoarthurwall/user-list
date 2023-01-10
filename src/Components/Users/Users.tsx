@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { IUsers } from "../../IUsers";
 
 const Container = styled.section`
   width: 90%;
@@ -21,9 +22,7 @@ const PhotoData = styled.div`
   height: 40px;
   width: 40px;
   background-color: grey;
-  border: 2px solid yellow; 
-
-
+  border: 2px solid yellow;
 `;
 const ShowData = styled.button`
   border: 2px solid yellow;
@@ -35,13 +34,14 @@ const Heading = styled.h4`
 `;
 
 const DataWrapper = styled.div`
-height: 100%;
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 const Users = () => {
-  const [userData, setUserData] = useState([]); //STORES USER DATA FROM API
+  const [userData, setUserData] = useState<IUsers[]>([]); //STORES USER DATA FROM API
 
   //API FETCH FOR USER DATA
   const API = "https://randomuser.me/api/?results=20";
@@ -68,19 +68,15 @@ const Users = () => {
       <DataWrapper>
         <NameData>Dave</NameData>
       </DataWrapper>
-
       <DataWrapper>
         <EmailData>dave@gmail.com</EmailData>
       </DataWrapper>
-
       <DataWrapper>
         <PhoneData>123456789</PhoneData>
       </DataWrapper>
-
       <DataWrapper>
         <PhotoData></PhotoData>
       </DataWrapper>
-
       <DataWrapper>
         <ShowData>Show</ShowData>
       </DataWrapper>
