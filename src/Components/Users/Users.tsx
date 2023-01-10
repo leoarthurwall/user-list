@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+
+const Container = styled.section`
+`
 
 const Users = () => {
+
   const [userData, setUserData] = useState([]);
   const API = "https://randomuser.me/api/?results=20";
   const fetchUserData = () => {
@@ -16,7 +21,7 @@ const Users = () => {
   }, []);
 
   console.log({ userData });
-  return <div>Users</div>;
+  return <Container>Users</Container>;
 };
 
 export default Users;
