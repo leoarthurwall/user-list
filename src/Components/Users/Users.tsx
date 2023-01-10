@@ -2,25 +2,44 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.section`
-display: flex;
-width: 90%;
-justify-content: space-evenly;
-align-items: center;
-flex-direction: row;
+  width: 90%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  border: 2px solid blue;
 `;
-const Name = styled.div`
-`
-const NameData = styled.p``
-const Email = styled.div``
-const EmailData = styled.p``
-const Phone = styled.div``
-const PhoneData = styled.p``
-const Photo = styled.div``
-const PhotoData = styled.div``
-const Show = styled.div``
-const ShowData = styled.button``
-const Heading = styled.h4``
+const NameData = styled.p`
+  border: 2px solid yellow;
+  text-align: center;
+`;
+const EmailData = styled.p`
+  border: 2px solid yellow;
+`;
+const PhoneData = styled.p`
+  border: 2px solid yellow;
+`;
+const PhotoData = styled.div`
+  height: 40px;
+  width: 40px;
+  background-color: grey;
+  border: 2px solid yellow; 
 
+
+`;
+const ShowData = styled.button`
+  border: 2px solid yellow;
+`;
+
+const Heading = styled.h4`
+  border: 2px solid red;
+  text-align: center;
+`;
+
+const DataWrapper = styled.div`
+height: 100%;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;`
 const Users = () => {
   const [userData, setUserData] = useState([]); //STORES USER DATA FROM API
 
@@ -39,28 +58,34 @@ const Users = () => {
   }, []);
 
   console.log({ userData });
-  return <Container>
-   <Name>
-    <Heading>Name</Heading>
-    <NameData></NameData>
-   </Name>
-   <Email>
-    <Heading>Email</Heading>
-    <EmailData></EmailData>
-   </Email>
-   <Phone>
-    <Heading>Phone</Heading>
-    <PhoneData></PhoneData>
-   </Phone>
-   <Photo>
-    <Heading>Photo</Heading>
-    <PhotoData></PhotoData>
-   </Photo>
-   <Show>
-    <Heading>Show</Heading>
-    <ShowData></ShowData>
-   </Show>
-  </Container>;
+  return (
+    <Container>
+      <Heading>Name</Heading>
+      <Heading>Email</Heading>
+      <Heading>Phone</Heading>
+      <Heading>Photo</Heading>
+      <Heading>Show</Heading>
+      <DataWrapper>
+        <NameData>Dave</NameData>
+      </DataWrapper>
+
+      <DataWrapper>
+        <EmailData>dave@gmail.com</EmailData>
+      </DataWrapper>
+
+      <DataWrapper>
+        <PhoneData>123456789</PhoneData>
+      </DataWrapper>
+
+      <DataWrapper>
+        <PhotoData></PhotoData>
+      </DataWrapper>
+
+      <DataWrapper>
+        <ShowData>Show</ShowData>
+      </DataWrapper>
+    </Container>
+  );
 };
 
 export default Users;
