@@ -1,25 +1,17 @@
 import styled from "styled-components";
 
-const NameData = styled.p`
-  border: 2px solid yellow;
-  text-align: center;
-`;
-const EmailData = styled.p`
-  border: 2px solid yellow;
-`;
-const PhoneData = styled.p`
-  border: 2px solid yellow;
-`;
+const NameData = styled.p``;
+const EmailData = styled.p``;
+const PhoneData = styled.p``;
 const PhotoData = styled.img`
   height: 50px;
   width: 50px;
   background-color: grey;
-  border: 2px solid yellow;
 `;
 const ShowData = styled.button`
   background-color: #93c5fd;
   padding: 10px;
-  border:none;
+  border: none;
   border-radius: 2px;
 `;
 
