@@ -4,5 +4,5 @@ export interface IUsers {
     phone: string
     picture: any
     user: any
-    id: number  
+    id: any  
 }
