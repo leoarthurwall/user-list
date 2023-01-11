@@ -25,10 +25,15 @@ const DataWrapper = styled.div`
 
 type Props = {
   user: any;
+  id: number;
 };
 
-const UserRow: React.FC<Props> = ({ user }) => {
+const UserRow: React.FC<Props> = ({ user, id }) => {
   const { name, email, phone, picture } = user;
+
+  const handleShowClick = () => {
+    console.log({id})
+  }
   return (
     <>
       <DataWrapper>
@@ -46,7 +51,7 @@ const UserRow: React.FC<Props> = ({ user }) => {
         <PhotoData src={picture.thumbnail} alt="user profile photo"></PhotoData>
       </DataWrapper>
       <DataWrapper>
-        <ShowData>Show</ShowData>
+        <ShowData onClick={handleShowClick}>Show</ShowData>
       </DataWrapper>
     </>
   );

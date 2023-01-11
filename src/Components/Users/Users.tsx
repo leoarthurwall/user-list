@@ -34,7 +34,7 @@ const Users = () => {
         <Headers />
         {userData &&
           userData.map((user: any, index: number) => (
-            <UserRow key={index} user={user}></UserRow>
+            <UserRow id={index} user={user}></UserRow>
           ))}
       </Container>
     </>
