@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Heading = styled.h4`
-  border: 2px solid red;
   text-align: center;
 `;
 

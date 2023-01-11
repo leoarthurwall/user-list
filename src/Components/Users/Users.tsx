@@ -9,14 +9,13 @@ const Container = styled.section`
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   grid-row-gap: 15px;
-  border: 2px solid blue;
 `;
 
 const Users = () => {
   const [userData, setUserData] = useState<IUsers[]>([]); //STORES USER DATA FROM API
 
   //API FETCH FOR USER DATA
-  const API = "https://randomuser.me/api/?results=20";
+  const API = "https://randomuser.me/api/?results=10";
   const fetchUserData = () => {
     fetch(API)
       .then((res) => res.json())
@@ -34,7 +33,9 @@ const Users = () => {
       <Container>
         <Headers />
         {userData &&
-          userData.map((user:any, index:number) => <UserRow key={index} user={user}></UserRow>)}
+          userData.map((user: any, index: number) => (
+            <UserRow key={index} user={user}></UserRow>
+          ))}
       </Container>
     </>
   );
