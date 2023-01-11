@@ -28,12 +28,12 @@ const Users = () => {
     fetchUserData();
   }, []);
 
-
   return (
     <>
       <Container>
         <Headers />
-        <UserRow userData={userData}/>
+        {userData &&
+          userData.map((user:any, index:number) => <UserRow key={index} user={user}></UserRow>)}
       </Container>
     </>
   );

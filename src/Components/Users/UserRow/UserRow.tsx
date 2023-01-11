@@ -30,10 +30,10 @@ const DataWrapper = styled.div`
 `;
 
 type Props = {
-    userData: IUsers[]
+    user:any
   };
 
-const UserRow: React.FC<Props>  = ({userData}) => {
+const UserRow: React.FC<Props>  = ({user}) => {
   return (
       <>
           <DataWrapper>
