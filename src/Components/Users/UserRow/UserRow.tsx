@@ -11,7 +11,7 @@ const EmailData = styled.p`
 const PhoneData = styled.p`
   border: 2px solid yellow;
 `;
-const PhotoData = styled.div`
+const PhotoData = styled.img`
   height: 40px;
   width: 40px;
   background-color: grey;
@@ -34,19 +34,20 @@ type Props = {
   };
 
 const UserRow: React.FC<Props>  = ({user}) => {
+    const {name, email, phone, picture} = user
   return (
       <>
           <DataWrapper>
-            <NameData></NameData>
+            <NameData>{name.first} {name.last}</NameData>
           </DataWrapper>
           <DataWrapper>
-            <EmailData>dave@gmail.com</EmailData>
+            <EmailData>{email}</EmailData>
           </DataWrapper>
           <DataWrapper>
-            <PhoneData>123456789</PhoneData>
+            <PhoneData>{phone}</PhoneData>
           </DataWrapper>
           <DataWrapper>
-            <PhotoData></PhotoData>
+            <PhotoData src={picture.thumbnail}></PhotoData>
           </DataWrapper>
           <DataWrapper>
             <ShowData>Show</ShowData>

@@ -3,6 +3,6 @@ export interface IUsers {
     email: string
     phone: string
     picture: any
-    thumbnail: string
     user: any
+    
 }
