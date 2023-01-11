@@ -20,15 +20,15 @@ const Users = () => {
     fetch(API)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
-        setUserData(res);
+        console.log(res.results);
+        setUserData(res.results);
       });
   };
   useEffect(() => {
     fetchUserData();
   }, []);
 
-  // console.log("userOne:", userData.results);
+
   return (
     <>
       <Container>
