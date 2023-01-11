@@ -4,4 +4,5 @@ export interface IUsers {
     phone: string
     picture: any
     thumbnail: string
+    results: any
 }

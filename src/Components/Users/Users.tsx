@@ -57,30 +57,36 @@ const Users = () => {
     fetchUserData();
   }, []);
 
-  console.log({ userData });
+  console.log("userOne:", userData.results);
   return (
-    <Container>
-      <Heading>Name</Heading>
-      <Heading>Email</Heading>
-      <Heading>Phone</Heading>
-      <Heading>Photo</Heading>
-      <Heading>Show</Heading>
-      <DataWrapper>
-        <NameData>Dave</NameData>
-      </DataWrapper>
-      <DataWrapper>
-        <EmailData>dave@gmail.com</EmailData>
-      </DataWrapper>
-      <DataWrapper>
-        <PhoneData>123456789</PhoneData>
-      </DataWrapper>
-      <DataWrapper>
-        <PhotoData></PhotoData>
-      </DataWrapper>
-      <DataWrapper>
-        <ShowData>Show</ShowData>
-      </DataWrapper>
-    </Container>
+    <>
+      <Container>
+        <Heading>Name</Heading>
+        <Heading>Email</Heading>
+        <Heading>Phone</Heading>
+        <Heading>Photo</Heading>
+        <Heading>Show</Heading>
+        {userData.map((user: any, index: any) => (
+          <>
+            <DataWrapper>
+              <NameData></NameData>
+            </DataWrapper>
+            <DataWrapper>
+              <EmailData>dave@gmail.com</EmailData>
+            </DataWrapper>
+            <DataWrapper>
+              <PhoneData>123456789</PhoneData>
+            </DataWrapper>
+            <DataWrapper>
+              <PhotoData></PhotoData>
+            </DataWrapper>
+            <DataWrapper>
+              <ShowData>Show</ShowData>
+            </DataWrapper>
+          </>
+        ))}
+      </Container>
+    </>
   );
 };
 
