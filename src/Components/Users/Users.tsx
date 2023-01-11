@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { IUsers } from "../../IUsers";
+import Headers from "./Headers/Headers";
+import UserRow from "./UserRow/UserRow";
 
 const Container = styled.section`
   width: 90%;
@@ -8,38 +10,7 @@ const Container = styled.section`
   grid-template-columns: auto auto auto auto auto;
   border: 2px solid blue;
 `;
-const NameData = styled.p`
-  border: 2px solid yellow;
-  text-align: center;
-`;
-const EmailData = styled.p`
-  border: 2px solid yellow;
-`;
-const PhoneData = styled.p`
-  border: 2px solid yellow;
-`;
-const PhotoData = styled.div`
-  height: 40px;
-  width: 40px;
-  background-color: grey;
-  border: 2px solid yellow;
-`;
-const ShowData = styled.button`
-  border: 2px solid yellow;
-`;
 
-const Heading = styled.h4`
-  border: 2px solid red;
-  text-align: center;
-`;
-
-const DataWrapper = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 const Users = () => {
   const [userData, setUserData] = useState<IUsers[]>([]); //STORES USER DATA FROM API
 
@@ -57,34 +28,12 @@ const Users = () => {
     fetchUserData();
   }, []);
 
-  console.log("userOne:", userData.results);
+  // console.log("userOne:", userData.results);
   return (
     <>
       <Container>
-        <Heading>Name</Heading>
-        <Heading>Email</Heading>
-        <Heading>Phone</Heading>
-        <Heading>Photo</Heading>
-        <Heading>Show</Heading>
-        {userData.map((user: any, index: any) => (
-          <>
-            <DataWrapper>
-              <NameData></NameData>
-            </DataWrapper>
-            <DataWrapper>
-              <EmailData>dave@gmail.com</EmailData>
-            </DataWrapper>
-            <DataWrapper>
-              <PhoneData>123456789</PhoneData>
-            </DataWrapper>
-            <DataWrapper>
-              <PhotoData></PhotoData>
-            </DataWrapper>
-            <DataWrapper>
-              <ShowData>Show</ShowData>
-            </DataWrapper>
-          </>
-        ))}
+        <Headers />
+        <UserRow userData={userData}/>
       </Container>
     </>
   );
