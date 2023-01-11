@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useState } from "react";
+import { IUsers } from "../../../IUsers";
 
 const NameData = styled.p``;
 const EmailData = styled.p``;
@@ -25,15 +27,19 @@ const DataWrapper = styled.div`
 
 type Props = {
   user: any;
-  id: number;
+  key: number;
+  userData: IUsers[];
 };
 
-const UserRow: React.FC<Props> = ({ user, id }) => {
+const UserRow: React.FC<Props> = ({ user, key, userData }) => {
   const { name, email, phone, picture } = user;
 
+  const [selectedUser, setSelectedUser] = useState([]);
+
+  //CONTINUE HERE - GIVE ID TO ELEMENT AND THEN MATCH IN FILTER
   const handleShowClick = () => {
-    console.log({id})
-  }
+    console.log(user.id.value);
+  };
   return (
     <>
       <DataWrapper>
