@@ -8,6 +8,7 @@ const Container = styled.section`
   width: 90%;
   display: grid;
   grid-template-columns: auto auto auto auto auto;
+  grid-row-gap: 15px;
   border: 2px solid blue;
 `;
 
