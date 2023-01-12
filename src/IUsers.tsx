@@ -1,5 +1,8 @@
 export interface IUsers {
-    name: string
+    name: string | any
+    title: string
+    first: string
+    last: string
     email: string
     phone: string
     picture: any

@@ -7,13 +7,24 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
 `;
+const Name = styled.h3``;
+const Picture = styled.img``;
+
+const Joined = styled.p``;
 type Props = {
   selectedUser: IUsers[];
   setSelectedUser: (val: IUsers[]) => void;
 };
 
 const PopUp: React.FC<Props> = ({ selectedUser, setSelectedUser }) => {
-  return <Container>PopUp</Container>;
+    const {name, picture} = selectedUser[0]
+  return (
+    <Container>
+      <Name>{name.title} {name.first} {name.last}</Name>
+      <Picture src={picture.large} alt="user image" /> 
+      <Joined></Joined>
+    </Container>
+  );
 };
 
 export default PopUp;
