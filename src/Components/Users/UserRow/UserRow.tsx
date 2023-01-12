@@ -39,10 +39,10 @@ const UserRow: React.FC<Props> = ({ user, userData }) => {
   const handleShowClick = () => {
     const showButtonUserId = user.id.value;
     setSelectedUser(
-      userData.filter((user) => user.id.value === showButtonUserId)
+      userData.filter((filterUser) => filterUser.id.value === showButtonUserId)
     );
   };
-
+console.log({selectedUser})
   return (
     <>
       <DataWrapper>
