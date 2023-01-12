@@ -9,4 +9,5 @@ export interface IUsers {
     user: any
     id: any
     login: any  
+    registered: string | any
 }

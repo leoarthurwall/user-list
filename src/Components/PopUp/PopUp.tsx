@@ -9,6 +9,9 @@ const Container = styled.section`
 `;
 const Name = styled.h3``;
 const Picture = styled.img``;
+const Span = styled.span`
+  font-weight: bold;
+`;
 
 const Joined = styled.p``;
 type Props = {
@@ -17,12 +20,16 @@ type Props = {
 };
 
 const PopUp: React.FC<Props> = ({ selectedUser, setSelectedUser }) => {
-    const {name, picture} = selectedUser[0]
+  const { name, picture, registered } = selectedUser[0];
   return (
     <Container>
-      <Name>{name.title} {name.first} {name.last}</Name>
-      <Picture src={picture.large} alt="user image" /> 
-      <Joined></Joined>
+      <Name>
+        {name.title} {name.first} {name.last}
+      </Name>
+      <Picture src={picture.large} alt="user image" />
+      <Joined>
+        <Span>Joined:</Span> {registered.date} ({registered.age} years ago)
+      </Joined>
     </Container>
   );
 };
