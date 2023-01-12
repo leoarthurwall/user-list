@@ -40,7 +40,9 @@ const Users = () => {
 
   return (
     <Container>
-      {selectedUser.length === 1 ? <PopUp /> : null}
+      {selectedUser.length === 1 ? (
+        <PopUp selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
+      ) : null}
       <GridContainer>
         <Headers />
         {userData &&
