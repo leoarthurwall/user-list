@@ -48,7 +48,7 @@ const Users = () => {
             <UserRow
               userData={userData}
               setSelectedUser={setSelectedUser}
-              key={user.id.value}
+              key={user.login.uuid}
               user={user}
             ></UserRow>
           ))}

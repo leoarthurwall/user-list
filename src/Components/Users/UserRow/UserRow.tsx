@@ -37,9 +37,9 @@ const UserRow: React.FC<Props> = ({ user, userData, setSelectedUser }) => {
 
   //CONTINUE HERE - GIVE ID TO ELEMENT AND THEN MATCH IN FILTER
   const handleShowClick = () => {
-    const showButtonUserId = user.id.value;
+    const showButtonUserId = user.login.uuid;
     setSelectedUser(
-      userData.filter((filterUser) => filterUser.id.value === showButtonUserId)
+      [...userData].filter((filterUser) => filterUser.login.uuid === showButtonUserId)
     );
   };
   return (
