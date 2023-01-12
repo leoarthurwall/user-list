@@ -28,12 +28,12 @@ const DataWrapper = styled.div`
 type Props = {
   user: any;
   userData: IUsers[];
+  setSelectedUser: any
 };
 
-const UserRow: React.FC<Props> = ({ user, userData }) => {
+const UserRow: React.FC<Props> = ({ user, userData, setSelectedUser }) => {
   const { name, email, phone, picture } = user;
 
-  const [selectedUser, setSelectedUser] = useState<IUsers[]>([]);
 
   //CONTINUE HERE - GIVE ID TO ELEMENT AND THEN MATCH IN FILTER
   const handleShowClick = () => {
@@ -42,7 +42,6 @@ const UserRow: React.FC<Props> = ({ user, userData }) => {
       userData.filter((filterUser) => filterUser.id.value === showButtonUserId)
     );
   };
-console.log({selectedUser})
   return (
     <>
       <DataWrapper>
