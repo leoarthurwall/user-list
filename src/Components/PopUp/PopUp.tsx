@@ -21,6 +21,9 @@ type Props = {
 
 const PopUp: React.FC<Props> = ({ selectedUser, setSelectedUser }) => {
   const { name, picture, registered } = selectedUser[0];
+
+ const userDate = new Date(registered.date.slice(0, 10)).toString()
+ const userDateSliced = userDate.slice(0, 15)
   return (
     <Container>
       <Name>
@@ -28,7 +31,7 @@ const PopUp: React.FC<Props> = ({ selectedUser, setSelectedUser }) => {
       </Name>
       <Picture src={picture.large} alt="user image" />
       <Joined>
-        <Span>Joined:</Span> {registered.date} ({registered.age} years ago)
+        <Span>Joined:</Span> {userDateSliced} ({registered.age} years ago)
       </Joined>
     </Container>
   );
