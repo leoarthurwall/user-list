@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 import { IUsers } from "../../../IUsers";
 
 const NameData = styled.p``;
@@ -14,7 +13,12 @@ const ShowData = styled.button`
   background-color: #93c5fd;
   padding: 10px;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover{
+    background-color: #6397CA;
+
+  }
 `;
 
 const DataWrapper = styled.div`
