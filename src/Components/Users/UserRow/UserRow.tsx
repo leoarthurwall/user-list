@@ -38,7 +38,7 @@ type Props = {
 const UserRow: React.FC<Props> = ({ user, userData, setSelectedUser }) => {
   const { name, email, phone, picture } = user;
 
-  const [showClicked, setShowClicked] = useState(false);
+  const [showClicked, setShowClicked] = useState(true);
 
   //CONTINUE HERE - GIVE ID TO ELEMENT AND THEN MATCH IN FILTER
   const handleShowClick = () => {
@@ -48,6 +48,7 @@ const UserRow: React.FC<Props> = ({ user, userData, setSelectedUser }) => {
         (filterUser) => filterUser.login.uuid === showButtonUserId
       )
     );
+    setShowClicked(!showClicked);
   };
   return (
     <>
