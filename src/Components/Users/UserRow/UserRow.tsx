@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IUsers } from "../../../IUsers";
+import { useState } from "react";
 
 const NameData = styled.p``;
 const EmailData = styled.p``;
@@ -15,9 +16,8 @@ const ShowData = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  &:hover{
-    background-color: #6397CA;
-
+  &:hover {
+    background-color: #6397ca;
   }
 `;
 
@@ -37,6 +37,8 @@ type Props = {
 
 const UserRow: React.FC<Props> = ({ user, userData, setSelectedUser }) => {
   const { name, email, phone, picture } = user;
+
+  const [showClicked, setShowClicked] = useState(false);
 
   //CONTINUE HERE - GIVE ID TO ELEMENT AND THEN MATCH IN FILTER
   const handleShowClick = () => {
@@ -64,7 +66,11 @@ const UserRow: React.FC<Props> = ({ user, userData, setSelectedUser }) => {
         <PhotoData src={picture.thumbnail} alt="user profile photo"></PhotoData>
       </DataWrapper>
       <DataWrapper>
-        <ShowData onClick={handleShowClick}>Show</ShowData>
+        {showClicked ? (
+          <ShowData onClick={handleShowClick}>Show</ShowData>
+        ) : (
+          <ShowData onClick={handleShowClick}>Hide</ShowData>
+        )}
       </DataWrapper>
     </>
   );
