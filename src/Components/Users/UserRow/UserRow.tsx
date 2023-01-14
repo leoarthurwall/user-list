@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { IUsers } from "../../../IUsers";
-import { useState } from "react";
 
 const NameData = styled.p``;
 const EmailData = styled.p``;
@@ -38,8 +37,6 @@ type Props = {
 const UserRow: React.FC<Props> = ({ user, userData, setSelectedUser }) => {
   const { name, email, phone, picture } = user;
 
-  const [showClicked, setShowClicked] = useState(true);
-
   //CONTINUE HERE - GIVE ID TO ELEMENT AND THEN MATCH IN FILTER
   const handleShowClick = () => {
     const showButtonUserId = user.login.uuid;
@@ -48,7 +45,7 @@ const UserRow: React.FC<Props> = ({ user, userData, setSelectedUser }) => {
         (filterUser) => filterUser.login.uuid === showButtonUserId
       )
     );
-    setShowClicked(!showClicked);
+   
   };
   return (
     <>
@@ -67,11 +64,7 @@ const UserRow: React.FC<Props> = ({ user, userData, setSelectedUser }) => {
         <PhotoData src={picture.thumbnail} alt="user profile photo"></PhotoData>
       </DataWrapper>
       <DataWrapper>
-        {showClicked ? (
-          <ShowData onClick={handleShowClick}>Show</ShowData>
-        ) : (
-          <ShowData onClick={handleShowClick}>Hide</ShowData>
-        )}
+        <ShowData onClick={handleShowClick}>Show</ShowData>
       </DataWrapper>
     </>
   );
