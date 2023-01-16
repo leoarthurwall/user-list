@@ -12,7 +12,7 @@ Open the project onto your own machine and then run
 
 This will install all the dependencies required to run this project.
 
-Finally, open localhost:3000' in your browser to see the project in action.
+Finally, open localhost:3000 in your browser to see the project in action.
 
 ## TECH STACK
 
@@ -25,9 +25,12 @@ The tech stack used for this project is:
 
 The functionality is fairly straightforward:
 
-1 - The user data is fetched from the random user API and stored in an array
-2 - The users array is mapped and displayed in a list
+1 - The user data is fetched from the random user API and stored in an array.
+
+2 - The users array is mapped and displayed in a list.
+
 3 - By clicking the show button, it filters the users array by matching the id of the clicked user and returning it in the new filtered user array.
+
 4 - The filtered user array displays with additional information above the list of mapped users.  
 
 ## CHALLENGES
