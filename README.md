@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# USER LIST
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the user list. You can view the users, and click the chow button to see further informaton about that user.
 
-## Available Scripts
+## GET STARTED
 
-In the project directory, you can run:
+To run this project:
 
-### `npm start`
+Open the project onto your own machine and then run 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```npx i```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This will install all the dependencies required to run this project.
 
-### `npm test`
+Finally, open localhost:3000' in your browser to see the project in action.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## TECH STACK
 
-### `npm run build`
+The tech stack used for this project is:
+- React
+- Typescript
+- Styled Comopnents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## FUNCTIONALITY
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The functionality is fairly straightforward:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1 - The user data is fetched from the random user API and stored in an array
+2 - The users array is mapped and displayed in a list
+3 - By clicking the show button, it filters the users array by matching the id of the clicked user and returning it in the new filtered user array.
+4 - The filtered user array displays with additional information above the list of mapped users.  
 
-### `npm run eject`
+## CHALLENGES
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This was a fun challenge and gave me an opportunity to do some further learning with arrays.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The main challenge I faced was to return the user that was clicked on. Take a look at the code to see how I managed it.
